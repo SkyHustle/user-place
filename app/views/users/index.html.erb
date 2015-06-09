@@ -1,0 +1,9 @@
+<h2> all users </h2>
+
+<% @users.each do |user| %>
+  <%= user.name %>
+  <%= link_to "edit user", edit_user_path(user) %>
+  <%= link_to "delete user", user_path(user), method: :delete, data: {confirm: "Really delete the user?"}%><br>
+<% end %>
+
+<%= link_to "add new user", new_user_path %>
